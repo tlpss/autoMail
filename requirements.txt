@@ -1,3 +1,4 @@
 smtplib
 email
 pytest
+pandas
