@@ -1,3 +1,10 @@
+"""
+configuration template
+copy this file and rename it to configuration.py
+then fill in the params
+"""
+
+
 class Configuration:
     """
     user = Gmail account (i.e. primary gmail mail address)
