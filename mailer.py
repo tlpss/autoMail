@@ -55,7 +55,7 @@ def send_mail(sender_mail, receiver_mail, bcc_mail, subject, html_text, attachme
 
     # add attachments
     for file in attachment_files:
-        path = join('attachments',file)
+        path = join(Configuration.attachments_folder,file)
         print(path)
         with open(path, "rb") as f:
             ext  =file.split('.')[-1:]

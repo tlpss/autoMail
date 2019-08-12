@@ -11,5 +11,5 @@ def test_mailer():
     assert  res == 0
 
 def test_mail_system():
-    res = bunch_mailer("career@vtk.ugent.be","TEST BUNCH", "example.html", [], None , "config.csv")
+    res = bunch_mailer("career@vtk.ugent.be","TEST BUNCH", "example.html", [], None , "config.csv", test = False)
     assert res == 0
