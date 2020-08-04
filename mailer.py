@@ -19,7 +19,12 @@ def create_connection():
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.ehlo()
     server.starttls()
-    server.login(Configuration.user, Configuration.app_pwd)
+    try:
+        server.login(Configuration.user, Configuration.app_pwd)
+    except ModuleNotFoundError:
+        # Travis has no config file -> env vars,
+        # but allow users to simply use a python config file instead of using env vars
+        server.login(os.getenv("mail_user"),os.getenv("mail_pwd"))
 
     return server
 
