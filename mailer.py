@@ -9,7 +9,7 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 
 from os.path import  basename
-from os.path import join
+import os
 
 def create_connection():
     """
@@ -55,7 +55,7 @@ def send_mail(sender_mail, receiver_mail, bcc_mail, subject, html_text, attachme
 
     # add attachments
     for file in attachment_files:
-        path = join(Configuration.attachments_folder,file)
+        path = file
         print(path)
         with open(path, "rb") as f:
             ext  =file.split('.')[-1:]
@@ -65,7 +65,7 @@ def send_mail(sender_mail, receiver_mail, bcc_mail, subject, html_text, attachme
 
     # send mail
     try:
-        server.sendmail(sender_mail, receiver_mail, message.as_string())
+        server.send_message(message)
         return 0
     except:
         return -1

@@ -13,6 +13,5 @@ class Configuration:
     """
     user = "<fill>"
     app_pwd  ="<fill>"
-    attachments_folder = "attachments"
-    mail_folder = "mail"
+
 

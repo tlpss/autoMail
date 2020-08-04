@@ -2,8 +2,8 @@
 this file sends all mails according to specified input
 """
 import pandas as pd
-from os.path import join
 from mailer import *
+import os
 import numpy as np
 #TODO: mail & attachments folder to configuration
 
@@ -21,11 +21,11 @@ def bunch_mailer(sender_mail, subject, html_file, attachments, bcc_mail, configu
                 only if you press continue the mail is sent to all other persons
     :return: 0 if successful
     """
-    data = pd.read_csv(join(Configuration.mail_folder,configuration_csv))
+    data = pd.read_csv(configuration_csv)
     columns = (list(data))
 
     # read html
-    with open(join(Configuration.mail_folder,html_file), "r") as html:
+    with open(html_file, encoding='utf-8') as html:
         html_text = html.read()
 
     # open connection
