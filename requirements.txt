@@ -1,4 +1,2 @@
-smtplib
 email
-pytest
 pandas
