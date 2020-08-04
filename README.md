@@ -4,6 +4,7 @@
 *Quick solution for sending dynamic mails (html templates) over the free google smtp server*
 
 ## setup
+* clone the repo on your pc (if you don't know how to do this it might be usefull to have someone helping you that has a little more experience with this kind of shit, or you can just google it)
 * copy `configuration_template.py` to `configuration.py`
 * fill in your google account
 * create an application password for your google account and put it in the configuration (keep this pwd secret!)
