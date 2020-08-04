@@ -1,7 +1,6 @@
 """
 this file contains the actual mailing function
 """
-from configuration import Configuration
 import smtplib
 
 from email.mime.multipart import MIMEMultipart
@@ -20,6 +19,7 @@ def create_connection():
     server.ehlo()
     server.starttls()
     try:
+        from configuration import Configuration
         server.login(Configuration.user, Configuration.app_pwd)
     except ModuleNotFoundError:
         # Travis has no config file -> env vars,
